@@ -1,0 +1,221 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://free-assets/fonts/Balsamiq/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://free-assets/fonts/Balsamiq/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=3]
+length = 55.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 50 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1080 ), Vector2( 0, -3500 ) ]
+}
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_top = 1080.0
+margin_right = 1920.0
+margin_bottom = 4580.0
+mouse_filter = 1
+custom_fonts/bold_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center][b]Director[/b]
+Sergey Fedyaev
+
+[b]Co-Director[/b]
+Fyodor Leonkin
+
+[b]Story[/b]
+Sergey Fedyaev
+
+[b]Game Design[/b]
+Sergey Fedyaev
+Fyodor Leonkin
+
+[b]Character Design[/b]
+Sergey Fedyaev
+Dmitry Bragin
+
+[b]Graphics[/b]
+Sergey Fedyaev
+Dmitry Bragin
+
+[b]UI Designer[/b]
+Fyodor Leonkin
+
+[b]Programming[/b]
+Fyodor Leonkin
+
+[b]Music[/b]
+Rafael Krux
+Alexander Nakarada
+Kevin MacLeod
+
+[b]Sound Effects[/b]
+Sergey Fedyaev
+ofuscapreto
+14FValtrovaT
+AlienXXX
+marsebastia
+InspectorJ
+reg7783
+Marnenagel
+AnthonyChan0
+elliotlp
+mnslugger20
+Soundholder
+waxsocks
+michael_grinnell
+bubaproducer
+lawnjelly
+AlineAudio
+jorickhoofd
+owly-bee
+gorkem.yilmaz
+Speedenza
+Vimpy
+Diramus
+Stek59
+
+[b]Voice Actors[/b]
+Narrator — Fyodor Leonkin
+Jason Lee — 
+Matt Baker — Dmitry Bragin
+Naomi Song — 
+Guy/Old man — 
+Girl — 
+Rebel Leader — 
+Aliens — Sergey Fedyaev
+
+[b]English Localization[/b]
+Sergey Fedyaev
+
+[b]Game Testers[/b]
+Aleksandr Teryoshin
+Sergey Fedyaev
+Fyodor Leonkin
+
+
+
+SPECIAL THANKS
+to you for playing this game![/center]"
+text = "Director
+Sergey Fedyaev
+
+Co-Director
+Fyodor Leonkin
+
+Story
+Sergey Fedyaev
+
+Game Design
+Sergey Fedyaev
+Fyodor Leonkin
+
+Character Design
+Sergey Fedyaev
+Dmitry Bragin
+
+Graphics
+Sergey Fedyaev
+Dmitry Bragin
+
+UI Designer
+Fyodor Leonkin
+
+Programming
+Fyodor Leonkin
+
+Music
+Rafael Krux
+Alexander Nakarada
+Kevin MacLeod
+
+Sound Effects
+Sergey Fedyaev
+ofuscapreto
+14FValtrovaT
+AlienXXX
+marsebastia
+InspectorJ
+reg7783
+Marnenagel
+AnthonyChan0
+elliotlp
+mnslugger20
+Soundholder
+waxsocks
+michael_grinnell
+bubaproducer
+lawnjelly
+AlineAudio
+jorickhoofd
+owly-bee
+gorkem.yilmaz
+Speedenza
+Vimpy
+Diramus
+Stek59
+
+Voice Actors
+Narrator — Fyodor Leonkin
+Jason Lee — 
+Matt Baker — Dmitry Bragin
+Naomi Song — 
+Guy/Old man — 
+Girl — 
+Rebel Leader — 
+Aliens — Sergey Fedyaev
+
+English Localization
+Sergey Fedyaev
+
+Game Testers
+Aleksandr Teryoshin
+Sergey Fedyaev
+Fyodor Leonkin
+
+
+
+SPECIAL THANKS
+to you for playing this game!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "credits"
+anims/credits = SubResource( 3 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

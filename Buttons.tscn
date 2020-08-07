@@ -1,0 +1,207 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://free-assets/fonts/Balsamiq/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Buttons.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.470588 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 1, 0.92549, 0.811765, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 0.54902 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+extra_spacing_top = -2
+extra_spacing_bottom = -4
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="Animation" id=9]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Buttons" type="Control"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -800.0
+margin_top = 100.0
+margin_right = 800.0
+margin_bottom = 499.999
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1600.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="Button1" type="Button" parent="VBoxContainer/HBoxContainer1"]
+margin_right = 787.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_hover = Color( 1, 0.92549, 0.811765, 1 )
+custom_colors/font_color_pressed = Color( 0.8, 0.8, 0.8, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Button1"]
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 370.5
+margin_bottom = 70.5
+mouse_filter = 1
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer1"]
+margin_left = 812.0
+margin_right = 1600.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer1/Button2"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 764.0
+margin_bottom = 164.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 212.0
+margin_right = 1600.0
+margin_bottom = 399.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 25
+
+[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 787.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button3"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 764.0
+margin_bottom = 164.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 812.0
+margin_right = 1600.0
+margin_bottom = 187.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 5 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/Button4"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 764.0
+margin_bottom = 164.0
+mouse_filter = 1
+custom_fonts/font = SubResource( 5 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "show"
+anims/show = SubResource( 9 )
+[connection signal="pressed" from="VBoxContainer/HBoxContainer1/Button1" to="." method="_on_Button_pressed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer1/Button2" to="." method="_on_Button_pressed" binds= [ 2 ]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button3" to="." method="_on_Button_pressed" binds= [ 3 ]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Button4" to="." method="_on_Button_pressed" binds= [ 4 ]]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

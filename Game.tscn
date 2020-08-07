@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://TFOT.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=2]
+[ext_resource path="res://PauseMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Flashback.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fade"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -30.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -30.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "transition"
+tracks/0/type = "value"
+tracks/0/path = NodePath("../BG:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+autoplay = true
+bus = "Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MusicPlayer"]
+anims/fade = SubResource( 1 )
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="."]
+bus = "Voice"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VoicePlayer"]
+anims/fade = SubResource( 2 )
+
+[node name="SoundPlayers" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundPlayer1" type="AudioStreamPlayer" parent="SoundPlayers"]
+bus = "Sound"
+
+[node name="SoundPlayer2" type="AudioStreamPlayer" parent="SoundPlayers"]
+bus = "Sound"
+
+[node name="SoundPlayer3" type="AudioStreamPlayer" parent="SoundPlayers"]
+bus = "Sound"
+
+[node name="SoundPlayer4" type="AudioStreamPlayer" parent="SoundPlayers"]
+bus = "Sound"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OldBG" type="Sprite" parent="."]
+centered = false
+
+[node name="TransitionAnimPlayer" type="AnimationPlayer" parent="OldBG"]
+anims/transition = SubResource( 3 )
+
+[node name="BG" type="Sprite" parent="."]
+centered = false
+
+[node name="TFOT" parent="." instance=ExtResource( 1 )]
+visible = false
+mouse_filter = 1
+
+[node name="Flashback" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="PauseMenu" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="ClearTimer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="DelayTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+[connection signal="animation_finished" from="OldBG/TransitionAnimPlayer" to="." method="_on_TransitionAnimPlayer_animation_finished"]
+[connection signal="timeout" from="ClearTimer" to="." method="_on_ClearTimer_timeout"]
+[connection signal="timeout" from="DelayTimer" to="." method="_on_DelayTimer_timeout"]

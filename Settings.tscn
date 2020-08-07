@@ -1,0 +1,472 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://free-assets/fonts/Balsamiq/BalsamiqSans-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/Settings.gd" type="Script" id=2]
+[ext_resource path="res://free-assets/fonts/Balsamiq/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://free-assets/settings-arrow-left.png" type="Texture" id=4]
+[ext_resource path="res://free-assets/settings-arrow-right.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="DynamicFont" id=8]
+size = 45
+use_filter = true
+font_data = ExtResource( 3 )
+
+[node name="SettingsMenu" type="Control"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 0.705882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -300.0
+margin_right = 400.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 800, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextLanguage" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/TextLanguage"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Text Language"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/TextLanguage"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/TextLanguage/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/TextLanguage"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "English"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/TextLanguage"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/TextLanguage/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoiceLanguage" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 84.0
+margin_right = 800.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/VoiceLanguage"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Voice Language"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/VoiceLanguage"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/VoiceLanguage/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/VoiceLanguage"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "Русский"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/VoiceLanguage"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/VoiceLanguage/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicVolume" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 800.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/MusicVolume"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Music Volume"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/MusicVolume"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/MusicVolume/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/MusicVolume"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/MusicVolume"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/MusicVolume/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VoiceVolume" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 252.0
+margin_right = 800.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/VoiceVolume"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Voice Volume"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/VoiceVolume"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/VoiceVolume/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/VoiceVolume"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/VoiceVolume"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/VoiceVolume/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundVolume" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 336.0
+margin_right = 800.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/SoundVolume"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Sound Volume"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/SoundVolume"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/SoundVolume/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/SoundVolume"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/SoundVolume"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/SoundVolume/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 420.0
+margin_right = 800.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="VBoxContainer/Fullscreen"]
+margin_right = 480.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 1 )
+text = "Fullscreen"
+valign = 1
+
+[node name="ControlLeft" type="Control" parent="VBoxContainer/Fullscreen"]
+margin_left = 495.0
+margin_right = 545.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonLeft" type="TextureButton" parent="VBoxContainer/Fullscreen/ControlLeft"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Value" type="Label" parent="VBoxContainer/Fullscreen"]
+margin_left = 560.0
+margin_right = 735.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 175, 80 )
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 2 )
+text = "On"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlRight" type="Control" parent="VBoxContainer/Fullscreen"]
+margin_left = 750.0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 50, 0 )
+
+[node name="ButtonRight" type="TextureButton" parent="VBoxContainer/Fullscreen/ControlRight"]
+margin_top = 15.0
+margin_right = 100.0
+margin_bottom = 115.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+margin_top = 504.0
+margin_right = 800.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 96 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/TextLanguage/ControlLeft/ButtonLeft" to="." method="_on_TextLang_changed" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer/TextLanguage/ControlRight/ButtonRight" to="." method="_on_TextLang_changed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/VoiceLanguage/ControlLeft/ButtonLeft" to="." method="_on_VoiceLang_changed" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer/VoiceLanguage/ControlRight/ButtonRight" to="." method="_on_VoiceLang_changed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/MusicVolume/ControlLeft/ButtonLeft" to="." method="_on_MusicVol_changed" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer/MusicVolume/ControlRight/ButtonRight" to="." method="_on_MusicVol_changed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/VoiceVolume/ControlLeft/ButtonLeft" to="." method="_on_VoiceVol_changed" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer/VoiceVolume/ControlRight/ButtonRight" to="." method="_on_VoiceVol_changed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/SoundVolume/ControlLeft/ButtonLeft" to="." method="_on_SoundVol_changed" binds= [ -1 ]]
+[connection signal="pressed" from="VBoxContainer/SoundVolume/ControlRight/ButtonRight" to="." method="_on_SoundVol_changed" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/Fullscreen/ControlLeft/ButtonLeft" to="." method="_on_Fullscreen_changed"]
+[connection signal="pressed" from="VBoxContainer/Fullscreen/ControlRight/ButtonRight" to="." method="_on_Fullscreen_changed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_BackButton_pressed"]

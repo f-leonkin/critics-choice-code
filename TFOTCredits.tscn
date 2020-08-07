@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/TFOTCredits.gd" type="Script" id=1]
+[ext_resource path="res://free-assets/fonts/PT_Serif/PTSerif-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://nc-assets/images/13.png" type="Texture" id=3]
+[ext_resource path="res://nc-assets/images/25.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://free-assets/fonts/PT_Serif/PTSerif-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 42
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("SneakyCat:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Labels:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 9, 15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[node name="TFOTCredits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TV" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="SneakyCat" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Labels" type="Control" parent="."]
+visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="Label" parent="Labels"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_fonts/font = SubResource( 2 )
+text = "DIRECTED BY
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2" type="Label" parent="Labels"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_fonts/font = SubResource( 3 )
+text = "
+BILL TRUCKMANN & FRED FUCHS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "tfot_credits"
+anims/tfot_credits = SubResource( 4 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
